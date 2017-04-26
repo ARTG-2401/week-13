@@ -35,8 +35,8 @@ listDiv.addEventListener("click", function(e) {
     console.log("selectedList", selectedList);
 
     updateLists();
-    updateItemsForSelectedList(;
-});
+    updateItemsForSelectedList(
+    );});
 
 // ------------------------------------------------------
 // FUNCTIONS TO UPDATE THE HTML PAGE WITH RESPECT TO DATA
@@ -44,9 +44,9 @@ listDiv.addEventListener("click", function(e) {
 function updateLists() {
     while (listDiv.hasChildNodes()) {
         listDiv.removeChild(listDiv.lastChild);
-    }
+    }}
 
-    listArray.forEach(function(list, index) {
+    listArray.forEach(function(list, i) {
         // Create an 'a' element
         var aElement = document.createElement("a");
         aElement.classList.add("list-group-item");
@@ -61,8 +61,7 @@ function updateLists() {
         aElement.appendChild(textNode);
 
         listDiv.appendChild(aElement);
-    );
-}
+});
 
 function updateItemsForSelectedList() {
     while (itemDiv.hasChildNodes()) {
@@ -133,7 +132,7 @@ var buttonsArray = document.querySelectorAll(".popup-button");
 // querySelectorAll returns a DOMTokenList and not an Array (which includes methods like forEach)
 buttonsArray = Array.from(buttonsArray); // Conevrting DOMTokenList to an Array
 
-buttonArray.forEach(function(button) {
+buttonsArray.forEach(function(button) {
     button.addEventListener("click", function() {
         var popup = document.getElementById(this.dataset.popupid);
         // The data attributes can be accessed by .dataset variable which is part of the DOMElement (check HTML for buttonsArray)
